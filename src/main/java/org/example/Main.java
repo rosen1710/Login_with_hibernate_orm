@@ -7,13 +7,6 @@ import java.util.List;
 public class Main {
     public static void main(String[] args) {
         User user;
-        try {
-            user = AccountsManager.getUser("userName", "MyPassword");
-        } catch (AuthenticationException e) {
-            System.out.println(e.getMessage());
-            return;
-        }
-        System.out.println(user);
 
         // Create permissions
         Permission readPaymentsPermission = new Permission("payments-read");
@@ -31,5 +24,13 @@ public class Main {
         AccountsManager.registerUser(user);
 
         System.out.println("Entities saved successfully!");
+
+        try {
+            user = AccountsManager.getUser("userName", "MyPassword");
+        } catch (AuthenticationException e) {
+            System.out.println(e.getMessage());
+            return;
+        }
+        System.out.println(user);
     }
 }
