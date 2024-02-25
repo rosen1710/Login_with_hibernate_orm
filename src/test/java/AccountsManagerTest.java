@@ -21,9 +21,9 @@ public class AccountsManagerTest {
         // Create a user and associate the group
         User user = new User("userName", "MyPassword", Arrays.asList(readPaymentsPermission, writeDBPermission), List.of(group));
 
-        AccountsManager.addPermission(readPaymentsPermission);
-        AccountsManager.addPermission(writeDBPermission);
-        AccountsManager.addGroup(group);
+        AccountsManager.createPermission(readPaymentsPermission);
+        AccountsManager.createPermission(writeDBPermission);
+        AccountsManager.createGroup(group);
         AccountsManager.registerUser(user);
 
         System.out.println("Entities saved successfully!");

@@ -85,7 +85,7 @@ public class AccountsManager {
         }
     }
 
-    public static void addPermission(Permission permission) {
+    public static void createPermission(Permission permission) {
         // Create Hibernate SessionFactory
         SessionFactory sessionFactory = new Configuration().configure().buildSessionFactory();
 
@@ -108,7 +108,7 @@ public class AccountsManager {
         sessionFactory.close();
     }
 
-    public static void addGroup(Group group) {
+    public static void createGroup(Group group) {
         // Create Hibernate SessionFactory
         SessionFactory sessionFactory = new Configuration().configure().buildSessionFactory();
 
